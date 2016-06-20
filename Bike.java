@@ -47,18 +47,19 @@ public class Bike
        timePowerUp.start();
        while (timePowerUp == true)
        {
-            hasBoost = true;
             velocity = BOOSTED;
        }
     }
        
-    public void ghost()
+    public boolean ghost()
     {
        timePowerUp.start();
        while (timePowerUp == true)
        {
             hasGhost = true;
        }
+       hasGhost = false;
+       return hasGhost;
     }
        
     public int getX()
