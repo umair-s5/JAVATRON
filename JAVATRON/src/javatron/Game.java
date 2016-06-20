@@ -104,6 +104,7 @@ public class Game extends JPanel implements ActionListener
 	public boolean checkEndGame()
 	{
 		int winner = 0; 
+		
 		for(int i = 0; i < numPlayers; i++)
 			if(roundWins[i] == 3)
 			{

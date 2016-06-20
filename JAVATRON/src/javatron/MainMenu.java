@@ -168,7 +168,7 @@ public class MainMenu extends Application
 		Pane startGame = new Pane();
 
 		//sets the size of the pane
-		startGame.setPrefSize(1075,  750);
+		startGame.setPrefSize(1075, 750);
 		
 		//adds a background image to the pane
 		try (InputStream backgroundImage = Files.newInputStream(Paths.get("src/javatron/tron_bg.jpg")))
@@ -196,7 +196,7 @@ public class MainMenu extends Application
 		Title title = new Title("Start Round: " + roundNumber, 500, 80, 63);
 		
 		//sets the location of the title
-		title.setTranslateX(230);
+		title.setTranslateX(280);
 		title.setTranslateY(100);
 		
 		//creates a back button
@@ -234,24 +234,31 @@ public class MainMenu extends Application
 		
 		
 		
-		//gives instructions for what to do if the new round button is clicked
+		//gives instructions for what to do if the button is clicked
 		newRound.setOnMouseClicked(event -> {
+			
+
+			//creates the game when the new round button is clicked
+		 	
+			Game game = new Game(players);
+			
+			
 			Title player1win =  new Title("Player 1 has : " + player1wins +" wins", 200, 30, 15);
 			//sets the location of the title
-			player1win.setTranslateX(424);
+			player1win.setTranslateX(424); 
 			player1win.setTranslateY(450);
 			Title player2win =  new Title("Player 2 has : " + player2wins +" wins", 200, 30, 15);
 			//sets the location of the title
 			player2win.setTranslateX(424);
-			player2win.setTranslateY(520);
+			player2win.setTranslateY(500);
 			Title player3win =  new Title("Player 3 has : " + player3wins +" wins", 200, 30, 15);
 			//sets the location of the title
 			player3win.setTranslateX(424);
-			player3win.setTranslateY(590);
+			player3win.setTranslateY(550);
 			Title player4win =  new Title("Player 4 has : " + player4wins +" wins", 200, 30, 15);
 			//sets the location of the title
 			player4win.setTranslateX(424);
-			player4win.setTranslateY(660);
+			player4win.setTranslateY(600);
 			
 			
 			startGame.getChildren().removeAll(player1win, player2win, player3win, player4win);
@@ -274,22 +281,20 @@ public class MainMenu extends Application
 			startGameTitle = new Title("Start Round: " + roundNumber, 500, 80, 63);
 			
 			//sets the location of the title
-			startGameTitle.setTranslateX(230);
+			startGameTitle.setTranslateX(280);
 			startGameTitle.setTranslateY(100);
 			
 			//adds the title to the pane
 			startGame.getChildren().addAll(startGameTitle);
-			
-			//creates the game when the new round button is clicked
-			//Game game = new Game(); //THIS WILL BE CHANGED DEPENDING ON THE NEW CODE
-			
+	
 			//adds the number of wins titles
 			startGame.getChildren().addAll(player1win, player2win, player3win, player4win);
 
 			});
-
-		//instructions for what to do when the give powerup
-		givePowerup.setOnMouseClicked(event -> {
+		
+		
+		    //instructions for what to do when the give powerup
+		    givePowerup.setOnMouseClicked(event -> {
 			boost = false;
 			ghost = false;
 			 
@@ -375,7 +380,7 @@ public class MainMenu extends Application
 			numPlayers = new Title("There are " + players + " players.", 300, 30, 16);
 			
 			//sets the location of this title
-			numPlayers.setTranslateX(330);
+			numPlayers.setTranslateX(380);
 			numPlayers.setTranslateY(200);
 			
 			//adds this title to the pane
@@ -397,7 +402,7 @@ public class MainMenu extends Application
 			numPlayers = new Title("There are " + players + " players.", 300, 30, 16);
 			
 			//sets the location of this title
-			numPlayers.setTranslateX(330);
+			numPlayers.setTranslateX(380);
 			numPlayers.setTranslateY(200);
 			
 			//adds this title to the pane
